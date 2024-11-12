@@ -1,0 +1,303 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.dark-mode {
+    background-color: #101010;
+    color: white;
+}
+
+.light-mode {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+/* Particle animation container */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    background: transparent;
+}
+
+/* Particles styling */
+.particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: randomMovement var(--random-duration) linear infinite;
+    opacity: 0.8;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Random movement of particles */
+@keyframes randomMovement {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(var(--random-x), var(--random-y));
+    }
+}
+
+/* Content Container */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100vh;
+    width: 100%;
+    padding: 20px 40px 0;
+    box-sizing: border-box;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 25%;
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    transition: background-color 0.5s ease;
+    z-index: 1;
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%; /* Sidebar takes up the full height of the viewport */
+    overflow: auto;
+}
+
+body.light-mode .sidebar {
+    background-color: #ffffff;
+    color: black;
+}
+
+/* Profile picture styling */
+.profile-pic {
+    width: 150px; /* Adjust the size of the profile picture */
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px; /* Space below the image */
+}
+
+/* Dark Mode Buttons */
+.dark-mode-buttons {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 2;
+}
+
+/* Light and Dark Mode Buttons */
+.light-mode-btn, .dark-mode-btn {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Button colors based on toggled mode */
+body.light-mode .dark-mode-btn {
+    background-color: #ffffff;
+    color: black;
+}
+
+body.light-mode .light-mode-btn {
+    background-color: #84cc16;
+    color: black;
+}
+
+body.dark-mode .light-mode-btn {
+    background-color: #101010;
+}
+
+body.dark-mode .dark-mode-btn {
+    background-color: #84cc16;
+    color: white;
+}
+
+/* Icon styling for the buttons */
+.light-mode-btn i, .dark-mode-btn i {
+    font-size: 16px;
+}
+
+/* Hover Effect */
+.light-mode-btn:hover, .dark-mode-btn:hover {
+    background-color: #84cc16;
+}
+
+/* Main Content Section */
+.content {
+    width: 70%; /* Adjusted width for desktop */
+    padding: 30px;
+    margin-left: 30%; /* Align content with the fixed sidebar */
+    overflow-y: auto;
+    z-index: 1;
+}
+
+/* Skills Grid */
+.skills-grid i {
+    font-size: 40px;
+    color: #999;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.skills-grid i:hover {
+    transform: scale(1.2);
+}
+
+body.light-mode .skills-grid i {
+    color: black;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project-item {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    width: 45%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    opacity: 0;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Fade-in effect for project items */
+.fade-in {
+    opacity: 1;
+    animation: fadeInAnimation 1s ease-in-out;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body.light-mode .project-item {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+/* Explore Button Styling */
+.explore-btn {
+    background-color: transparent;
+    color: #38c172;
+    border: 1px solid #38c172;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.explore-btn:hover {
+    background-color: #38c172;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .dark-mode-buttons {
+        top: 70px; /* Push the dark mode button below the profile picture */
+    }
+
+    .content {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+.talk-btn {
+    position: relative;
+    padding: 0.75rem 1.5rem;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    border-radius: 8px;
+    background-color: #b7e673; /* Background in normal mode */
+    color: black;
+    -webkit-backdrop-filter: blur(10px); /* Add this for Safari */
+    backdrop-filter: blur(10px); /* For modern browsers */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.talk-btn:hover {
+    box-shadow: 0 8px 16px rgba(163, 255, 160, 0.4); /* Add hover shadow */
+}
+
+.talk-btn .dark:hover {
+    background-color: #b7e673;
+    color: black;
+    box-shadow: 0 0 20px rgba(163, 255, 160, 0.4); /* Add hover shadow in dark mode */
+}
+
+.talk-btn .relative {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+/* Add mask-image with the appropriate prefixes */
+.talk-btn span:first-child {
+    color: #000;
+    font-weight: 600;
+    -webkit-mask-image: linear-gradient(-75deg, rgba(163, 255, 160, 1) calc(var(--x) + 20%), transparent calc(var(--x) + 30%), rgba(163, 255, 160, 1) calc(var(--x) + 100%)); /* Webkit for Chrome, Opera */
+    mask-image: linear-gradient(-75deg, rgba(163, 255, 160, 1) calc(var(--x) + 20%), transparent calc(var(--x) + 30%), rgba(163, 255, 160, 1) calc(var(--x) + 100%)); /* Standard */
+}
+
+.talk-btn span:last-child {
+    background-image: linear-gradient(-75deg, rgba(163, 255, 160, 0.2) calc(var(--x)+20%), rgba(163, 255, 160, 0.5) calc(var(--x)+25%), rgba(163, 255, 160, 0.2) calc(var(--x)+100%));
+    -webkit-mask-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)); /* Add WebKit prefix for mask-image */
+    mask-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)); /* Standard */
+    mask-composite: exclude;
+    z-index: 10;
+    border-radius: inherit;
+}

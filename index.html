@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dave Noel M. Davide - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="dark-mode">
+    <!-- Particle background container -->
+    <div class="background-animation"></div>
+
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside class="sidebar">
+            <div class="profile">
+                <h1>DN</h1>
+                <p>Web Developer</p>
+                <img src="images/pic.jpg" alt="Profile Picture" class="profile-pic">
+                <h2>Hello!<br> I'm Dave Davide</h2>
+                <p>A passionate Web Developer with over 5 years of experience (including my college years) in creating dynamic and responsive websites. I am always looking to expand my knowledge and skillset in the web development industry.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/davedavide27/davedavide27" class="social-icon github"><i class="fab fa-github"></i></a>
+                    <a href="https://www.facebook.com/dave.davide.338/" class="social-icon facebook"><i class="fab fa-facebook"></i></a>
+                    <button class="talk-btn relative rounded-lg px-6 py-2 font-medium backdrop-blur-xl transition-[box-shadow] duration-300 ease-in-out hover:shadow-lg bg-lime-400 dark:hover:bg-lime-400 dark:bg-white dark:bg-[radial-gradient(circle_at_50%_50%,rgba(163,255,160,0.1)_0%,transparent_60%)] dark:hover:shadow-[0_0_20px_rgba(163,255,160,0.1)] hover:drop-shadow-lime-light" tabindex="0">
+                        <span class="relative block h-full w-full text-sm uppercase tracking-wide text-[rgb(0,0,0)] dark:font-semibold dark:text-[rgba(0,0,0,0.9)]" style="mask-image:linear-gradient(-75deg,rgba(163,255,160,1) calc(var(--x) + 20%),transparent calc(var(--x) + 30%),rgba(163,255,160,1) calc(var(--x) + 100%))">Let's Talk</span>
+                        <span style="mask:linear-gradient(rgb(0,0,0), rgb(0,0,0)) content-box,linear-gradient(rgb(0,0,0), rgb(0,0,0));mask-composite:exclude" class="absolute inset-0 z-10 block rounded-[inherit] bg-[linear-gradient(-75deg,rgba(163,255,160,0.2)_calc(var(--x)+20%),rgba(163,255,160,0.5)_calc(var(--x)+25%),rgba(163,255,160,0.2)_calc(var(--x)+100%))] p-px"></span>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Section -->
+        <main class="content">
+            <!-- Light and Dark Mode Buttons -->
+            <div class="dark-mode-buttons">
+                <button class="light-mode-btn">
+                    <i class="fas fa-sun"></i> Light Mode
+                </button>
+                <button class="dark-mode-btn">
+                    <i class="fas fa-moon"></i> Dark Mode
+                </button>
+            </div>
+
+            <!-- About Section -->
+            <section id="about">
+                <h2>About Me</h2>
+                <p>I’m Dave Davide, a web developer with a passion for building modern and responsive web applications. With a strong background in both front-end and back-end development, I aim to create websites that are efficient, visually appealing, and user-friendly.</p>
+                <div class="tags">
+                    <span>22 years old |</span><span> Web Development |</span><span> Back-End Developer |</span><span> Tech Enthusiast |</span>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills">
+                <h2>My Daily Tech Stack</h2>
+                <div class="skills-grid">
+                    <i class="fab fa-html5"></i>
+                    <i class="fab fa-css3-alt"></i>
+                    <i class="fab fa-js-square"></i>
+                    <i class="fab fa-react"></i>
+                    <i class="fab fa-python"></i>
+                    <i class="fab fa-laravel"></i>
+                </div>
+                <h3>Creating Seamless User Experiences, One Line of Code at a Time.</h3>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects">
+                <h2>My Works</h2>
+                <div class="projects-grid">
+                    <div class="project-item fade-in">
+                        <h3>Portfolio Website</h3>
+                        <p>This personal portfolio website showcases my work in web development and demonstrates my skills across various technologies.</p>
+                    </div>
+                    <div class="project-item fade-in">
+                        <h3>Resort Website</h3>
+                        <p>Developed a fully-responsive website for a local resort, integrating a custom booking system and interactive gallery.</p>
+                    </div>
+                </div>
+                <button class="explore-btn">Explore more <i class="fas fa-arrow-right"></i></button>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
