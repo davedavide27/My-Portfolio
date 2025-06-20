@@ -164,4 +164,21 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 500);
     }
   });
+
+  // New code to calculate and update age dynamically
+  function calculateAge(birthDate) {
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    return age;
+  }
+
+  const birthDate = new Date(2001, 11, 8); // December is month 11 (0-based index)
+  const ageSpan = document.getElementById('age');
+  if (ageSpan) {
+    ageSpan.textContent = calculateAge(birthDate) + ' years old |';
+  }
 });
