@@ -1,73 +1,53 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const modal = document.getElementById('imageModal');
-    const modalImg = document.getElementById('modalImage');
-    const captionText = document.getElementById('caption');
-    const closeBtn = document.querySelector('.modal-close');
+  // Existing code...
 
-    // Add click event listeners to images inside computer-frame and tablet-frame to open modal
-    const clickableImages = document.querySelectorAll('.clickable-image');
+  const sidebar = document.querySelector('.sidebar');
+  const resizeHandle = document.querySelector('.resize-handle');
+  const content = document.querySelector('.content');
 
-    clickableImages.forEach(img => {
-        img.addEventListener('click', () => {
-            modal.style.display = 'block';
-            modalImg.src = img.src;
-            modalImg.alt = img.alt;
-            captionText.textContent = img.alt;
-            modal.setAttribute('aria-hidden', 'false');
-        });
-    });
+  let isResizing = false;
+  let startX;
+  let startWidth;
 
-    // Close modal when clicking on close button
-    closeBtn.addEventListener('click', () => {
-        modal.style.display = 'none';
-        modal.setAttribute('aria-hidden', 'true');
-    });
+  function onMouseMove(e) {
+    if (!isResizing) return;
+    let newWidth = startWidth + (e.clientX - startX);
+    const maxWidth = window.innerWidth * 0.75;
+    const minWidth = 200; // minimum sidebar width in px
 
-    // Close modal when clicking outside the image
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-            modal.setAttribute('aria-hidden', 'true');
-        }
-    });
+    if (newWidth < minWidth) newWidth = minWidth;
+    if (newWidth > maxWidth) newWidth = maxWidth;
 
-    // Close modal on Escape key press
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.style.display === 'block') {
-            modal.style.display = 'none';
-            modal.setAttribute('aria-hidden', 'true');
-        }
-    });
+    sidebar.style.width = newWidth + 'px';
+    content.style.marginLeft = newWidth + 'px';
+  }
 
-    // Light and Dark Mode Toggle Buttons
-    const lightModeBtn = document.querySelector('.light-mode-btn');
-    const darkModeBtn = document.querySelector('.dark-mode-btn');
-    const body = document.body;
+  function onMouseUp() {
+    if (isResizing) {
+      isResizing = false;
+      document.body.style.cursor = 'default';
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onMouseUp);
+    }
+  }
 
-    lightModeBtn.addEventListener('click', () => {
-        body.classList.add('light-mode');
-        body.classList.remove('dark-mode');
-    });
+  resizeHandle.addEventListener('mousedown', (e) => {
+    if (window.innerWidth < 768) return; // Only enable on desktop
+    isResizing = true;
+    startX = e.clientX;
+    startWidth = sidebar.offsetWidth;
+    document.body.style.cursor = 'ew-resize';
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+  });
 
-    darkModeBtn.addEventListener('click', () => {
-        body.classList.add('dark-mode');
-        body.classList.remove('light-mode');
-    });
-
-    // Button hover effect for the new button style on all buttons with class "button" only in dark mode
-    const buttons = document.querySelectorAll('.button');
-
-    buttons.forEach(btn => {
-        btn.addEventListener('mouseenter', () => {
-            if (body.classList.contains('dark-mode')) {
-                body.classList.add('hover');
-            }
-        });
-
-        btn.addEventListener('mouseleave', () => {
-            if (body.classList.contains('dark-mode')) {
-                body.classList.remove('hover');
-            }
-        });
-    });
+  // Optional: Adjust content margin on window resize if sidebar width is fixed
+  window.addEventListener('resize', () => {
+    if (window.innerWidth < 768) {
+      sidebar.style.width = '';
+      content.style.marginLeft = '';
+    } else {
+      content.style.marginLeft = sidebar.offsetWidth + 'px';
+    }
+  });
 });
