@@ -173,12 +173,12 @@ body.light-mode .sidebar {
 
 /* Dark Mode Buttons */
 .dark-mode-buttons {
-    position: fixed;
-    top: 10px;
-    right: 20px;
+    position: fixed !important;
+    top: 10px !important;
+    right: 20px !important;
     display: flex;
     gap: 10px;
-    z-index: 2;
+    z-index: 1000;
 }
 
 /* Light and Dark Mode Buttons */
@@ -233,6 +233,16 @@ body.dark-mode .dark-mode-btn {
     overflow-y: auto;
     z-index: 1;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative; /* Added to position toggle buttons absolutely inside */
+}
+
+.dark-mode-buttons {
+    position: absolute !important;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    background: transparent;
+    padding: 10px 0;
 }
 
 /* Skills Grid */
@@ -628,24 +638,31 @@ body.light-mode .projects-grid {
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
-        padding: 10px 20px;
+        padding: 0 20px 10px 20px; /* Remove top padding to align sidebar at top */
+        width: 100%; /* Ensure container fits screen width */
+        box-sizing: border-box;
     }
 
     .sidebar {
-        width: 100%;
+        width: 93.7%;
         height: auto;
         position: relative;
-        margin-bottom: 20px;
+        margin-bottom: 20px; /* Add margin bottom for spacing */
+        overflow: visible; /* Remove separate scroll */
     }
 
     .dark-mode-buttons {
-        top: 70px; /* Push the dark mode button below the profile picture */
+        position: fixed; /* Ensure fixed position */
+        top: 10px; /* Position above main content */
+        right: 20px;
+        z-index: 10;
     }
 
     .content {
         width: 100%;
         margin-left: 0;
         padding: 20px 10px;
+        overflow: visible; /* Remove separate scroll */
     }
 }
 .talk-btn {
