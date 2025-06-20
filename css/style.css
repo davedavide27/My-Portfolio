@@ -96,7 +96,7 @@ body.light-mode .tags span {
 
 /* Sidebar */
 .sidebar {
-    width: 22%; /* reduced by about 7% from 25% */
+    width: 25%; /* reduced by about 7% from 25% */
     background-color: #1a1a1a;
     display: flex;
     flex-direction: column;
@@ -117,6 +117,37 @@ body.light-mode .tags span {
 
 .sidebar .profile {
     text-align: justify;
+    cursor: default;
+}
+
+.sidebar .profile span {
+    transition: color 0.3s ease;
+}
+
+.sidebar h2 {
+    transition: color 0.3s ease;
+    cursor: default;
+}
+
+.sidebar h2:hover {
+    /* Remove color change on entire h2 hover */
+    color: inherit;
+    text-shadow: none;
+}
+
+.sidebar h2 span {
+    transition: color 0.3s ease;
+}
+
+.sidebar h2 span.highlight {
+    color: #79ce79;
+    text-shadow: 0 0 8px rgb(116, 212, 116);
+    transition: color 0.6s ease, text-shadow 0.6s ease;
+}
+
+body.dark-mode .sidebar h2 span.highlight {
+    color: #4ac99f; /* aquamarine for dark mode */
+    text-shadow: 0 0 16px rgba(127, 255, 212, 1);
 }
 
 @media (max-width: 768px) {
@@ -309,6 +340,24 @@ body.light-mode .skills-grid i {
     border-radius: 10px;
     box-shadow: 0 0 30px rgba(0,0,0,0.9);
     animation: fadeInAnimation 0.5s ease-in-out;
+    position: relative;
+    z-index: 1001;
+}
+
+.modal.fade-out {
+    animation: fadeOutAnimation 0.5s ease-in-out forwards;
+    transform-origin: center bottom;
+}
+
+@keyframes fadeOutAnimation {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
 }
 
 .modal-close {
@@ -601,7 +650,8 @@ body.light-mode .projects-grid {
 }
 .talk-btn {
     position: relative;
-    padding: 0.75rem 1.5rem;
+    display: inline-block;
+    padding: 0.5rem 1rem;
     font-family: 'Arial', sans-serif;
     text-transform: uppercase;
     font-weight: 600;
@@ -634,6 +684,8 @@ body.light-mode .projects-grid {
 .talk-btn span:first-child {
     color: #000;
     font-weight: 600;
+    text-decoration: none !important;
+    border-bottom: none !important;
     -webkit-mask-image: linear-gradient(-75deg, rgba(163, 255, 160, 1) calc(var(--x) + 20%), transparent calc(var(--x) + 30%), rgba(163, 255, 160, 1) calc(var(--x) + 100%)); /* Webkit for Chrome, Opera */
     mask-image: linear-gradient(-75deg, rgba(163, 255, 160, 1) calc(var(--x) + 20%), transparent calc(var(--x) + 30%), rgba(163, 255, 160, 1) calc(var(--x) + 100%)); /* Standard */
 }

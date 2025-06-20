@@ -1,0 +1,42 @@
+#caption {
+  position: fixed;
+  top: 12%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-shadow: 0 0 12px rgba(0,0,0,0.9);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 12px 24px;
+  border-radius: 12px;
+  max-width: 90%;
+  text-align: center;
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+  animation: fadeInAnimation 0.5s ease-in-out;
+  z-index: 1002;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutAnimation {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
