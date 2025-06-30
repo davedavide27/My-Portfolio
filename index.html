@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Dave Noel M. Davide - Portfolio</title>
+    <style>
+/* Flutter icon only */
+.devicon-flutter-plain,
+.devicon-typescript-plain {
+    font-size: 3rem;
+    cursor: pointer;
+    display: inline-block; /* IMPORTANT */
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: default;
+}
+
+.devicon-flutter-plain:hover,
+.devicon-typescript-plain:hover {
+    transform: scale(1.2);
+    color: #007BFF;
+}
+
+    </style>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/modal-style.css" />
     <link rel="stylesheet" href="css/meteor.css" />
@@ -11,148 +29,269 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-</head>
-<body class="dark-mode">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    
+  </head>
+  <body class="dark-mode">
     <!-- Particle background container -->
     <div class="background-animation"></div>
 
     <div class="container">
-        <!-- Sidebar Section -->
-        <aside class="sidebar">
-            <div class="resize-handle" title="Drag to resize sidebar"></div>
-            <div class="profile">
-                <h1>DN</h1>
-                <p>Web Developer</p>
-                <img src="images/profile.jfif" alt="Profile Picture" class="profile-pic" />
-                <h2>
-                    <span>H</span><span>e</span><span>l</span><span>l</span><span>o</span><span>!</span><br />
-                    <span> </span><span>I</span><span>'</span><span>m</span><span> </span><span>D</span><span>a</span><span>v</span><span>e</span><span> </span><span>N</span><span>o</span><span>e</span><span>l</span><span> </span><span>M</span><span>.</span><span> </span><span>D</span><span>a</span><span>v</span><span>i</span><span>d</span><span>e</span>
-                </h2>
-                <p>
-                    A passionate and versatile Web Developer with over 2 years of experience
-                    building dynamic, responsive, and user-friendly web applications and systems.
-                    I have a strong foundation in both front-end and back-end development, database design, and API integration.
-                    I thrive on solving complex problems, continuously improving my skills, and delivering clean, maintainable solutions that make a real impact.
-                    I am always eager to learn new technologies and stay up-to-date in the ever-evolving world of web and mobile development.
-                </p>
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/dave-davide-485558320" class="social-icon linkedin"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/davedavide27/davedavide27" class="social-icon github"><i class="fab fa-github"></i></a>
-                    <a href="https://www.facebook.com/dave.davide.338" class="social-icon facebook"><i class="fab fa-facebook"></i></a>
-<a href="mailto:davedavide271@gmail.com" class="talk-btn btn-hover-effect-rounded" tabindex="0">
-                        <span class="relative block h-full w-full text-sm uppercase tracking-wide text-[rgb(0,0,0)] dark:font-semibold dark:text-[rgba(0,0,0,0.9)]" style="mask-image:linear-gradient(-75deg,rgba(163,255,160,1) calc(var(--x) + 20%),transparent calc(var(--x) + 30%),rgba(163,255,160,1) calc(var(--x) + 100%))">Let's Talk</span>
-                        <span style="mask:linear-gradient(rgb(0,0,0), rgb(0,0,0)) content-box,linear-gradient(rgb(0,0,0), rgb(0,0,0));mask-composite:exclude" class="absolute inset-0 z-10 block rounded-[inherit] bg-[linear-gradient(-75deg,rgba(163,255,160,0.2)_calc(var(--x)+20%),rgba(163,255,160,0.5)_calc(var(--x)+25%),rgba(163,255,160,0.2)_calc(var(--x)+100%))] p-px"></span>
-                    </a>
-                </div>
+      <!-- Sidebar Section -->
+      <aside class="sidebar">
+        <div class="resize-handle" title="Drag to resize sidebar"></div>
+        <div class="profile">
+          <h1>DN</h1>
+          <p>Web Developer</p>
+          <img
+            src="images/profile.jfif"
+            alt="Profile Picture"
+            class="profile-pic"
+          />
+          <h2>
+            <span>H</span><span>e</span><span>l</span><span>l</span
+            ><span>o</span><span>!</span><br />
+            <span> </span><span>I</span><span>'</span><span>m</span
+            ><span> </span><span>D</span><span>a</span><span>v</span
+            ><span>e</span><span> </span><span>N</span><span>o</span
+            ><span>e</span><span>l</span><span> </span><span>M</span
+            ><span>.</span><span> </span><span>D</span><span>a</span
+            ><span>v</span><span>i</span><span>d</span><span>e</span>
+          </h2>
+          <p>
+            A passionate and versatile Web Developer with over 2 years of
+            experience building dynamic, responsive, and user-friendly web
+            applications and systems. I have a strong foundation in both
+            front-end and back-end development, database design, and API
+            integration. I thrive on solving complex problems, continuously
+            improving my skills, and delivering clean, maintainable solutions
+            that make a real impact. I am always eager to learn new technologies
+            and stay up-to-date in the ever-evolving world of web and mobile
+            development.
+          </p>
+          <div class="social-icons">
+            <a
+              href="https://www.linkedin.com/in/dave-davide-485558320"
+              class="social-icon linkedin"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a
+              href="https://github.com/davedavide27/davedavide27"
+              class="social-icon github"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a
+              href="https://www.facebook.com/dave.davide.338"
+              class="social-icon facebook"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a
+              href="mailto:davedavide271@gmail.com"
+              class="talk-btn btn-hover-effect-rounded"
+              tabindex="0"
+            >
+              <span
+                class="relative block h-full w-full text-sm uppercase tracking-wide text-[rgb(0,0,0)] dark:font-semibold dark:text-[rgba(0,0,0,0.9)]"
+                style="
+                  mask-image: linear-gradient(
+                    -75deg,
+                    rgba(163, 255, 160, 1) calc(var(--x) + 20%),
+                    transparent calc(var(--x) + 30%),
+                    rgba(163, 255, 160, 1) calc(var(--x) + 100%)
+                  );
+                "
+                >Let's Talk</span
+              >
+              <span
+                style="
+                  mask: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)) content-box,
+                    linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0));
+                  mask-composite: exclude;
+                "
+                class="absolute inset-0 z-10 block rounded-[inherit] bg-[linear-gradient(-75deg,rgba(163,255,160,0.2)_calc(var(--x)+20%),rgba(163,255,160,0.5)_calc(var(--x)+25%),rgba(163,255,160,0.2)_calc(var(--x)+100%))] p-px"
+              ></span>
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content Section -->
+      <main class="content">
+        <!-- Light and Dark Mode Buttons -->
+        <div class="dark-mode-buttons">
+          <button class="light-mode-btn">
+            <i class="fas fa-sun"></i> Light Mode
+          </button>
+          <button class="dark-mode-btn">
+            <i class="fas fa-moon"></i> Dark Mode
+          </button>
+        </div>
+
+        <!-- About Section -->
+        <section id="about">
+          <h2>About Me</h2>
+          <p>
+            I’m Dave Davide, a web developer with a passion for building modern
+            and responsive web applications. With a strong background in both
+            front-end and back-end development, I aim to create websites that
+            are efficient, visually appealing, and user-friendly.
+          </p>
+          <div class="tags">
+            <span id="age"></span><span> Web Development |</span
+            ><span> Back-End Developer |</span><span> Tech Enthusiast |</span>
+          </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+          <h2>My Daily Tech Stack</h2>
+          <div class="skills-grid">
+            <i class="fab fa-html5" title="HTML5"></i>
+            <i class="fab fa-css3-alt" title="CSS3"></i>
+            <i class="fab fa-js-square" title="JavaScript"></i>
+            <i class="fab fa-react" title="React.js"></i>
+            <i class="fab fa-node-js" title="Node.js"></i>
+            <i class="fab fa-python" title="Python"></i>
+            <!-- <i class="fab fa-laravel" title="Laravel"></i> -->
+            <i class="fab fa-git-alt" title="Git"></i>
+            <i class="fas fa-database" title="MySQL"></i>
+            <i class="fas fa-server" title="API Backend"></i>
+            <!-- <i class="fas fa-terminal" title="CLI / Bash / Shell Scripting"></i> -->
+            <i class="fab fa-npm" title="npm / Package Management"></i>
+            <i class="devicon-flutter-plain" title="Flutter"></i>
+            <i class="devicon-typescript-plain " title="TypeScript"></i>
+
+          </div>
+          <h3>
+            Creating Seamless User Experiences, One Line of Code at a Time.
+          </h3>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+          <h2>My Works</h2>
+          <div class="projects-grid">
+            <div class="project-item fade-in">
+              <h3>Point of Sale Back Office Web App</h3>
+              <p>
+                A comprehensive web application for managing sales, inventory,
+                and customer data, designed to streamline retail operations
+                efficiently.
+              </p>
+              <div
+                class="computer-frame"
+                tabindex="0"
+                aria-label="Point of Sale Back Office Web App Screenshot"
+              >
+                <img
+                  src="images/pos_back_office_web_app.png"
+                  alt="Point of Sale Back Office Web App Screenshot"
+                  class="clickable-image"
+                />
+              </div>
+              <div class="button">
+                <a
+                  href="http://34.81.55.55:5000"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="View Point of Sale Back Office Web App Project"
+                >
+                  View Project
+                  <span class="shift">›</span>
+                </a>
+                <div class="mask"></div>
+              </div>
             </div>
-        </aside>
-
-        <!-- Main Content Section -->
-        <main class="content">
-            <!-- Light and Dark Mode Buttons -->
-            <div class="dark-mode-buttons">
-                <button class="light-mode-btn">
-                    <i class="fas fa-sun"></i> Light Mode
-                </button>
-                <button class="dark-mode-btn">
-                    <i class="fas fa-moon"></i> Dark Mode
-                </button>
+            <div class="project-item fade-in">
+              <h3>Point of Sale Mobile App</h3>
+              <p>
+                A mobile application offering the same robust sales and
+                inventory management features as the web app, optimized for
+                on-the-go retail management.
+              </p>
+              <div
+                class="tablet-frame"
+                tabindex="0"
+                aria-label="Point of Sale Mobile App Screenshot"
+              >
+                <img
+                  src="images/flutter_pos_app.png"
+                  alt="Point of Sale Mobile App Screenshot"
+                  class="clickable-image"
+                />
+              </div>
+              <div class="button">
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="View Point of Sale Mobile App Project"
+                >
+                  View Project
+                  <span class="shift">›</span>
+                </a>
+                <div class="mask"></div>
+              </div>
             </div>
-
-            <!-- About Section -->
-            <section id="about">
-                <h2>About Me</h2>
-                <p>
-                    I’m Dave Davide, a web developer with a passion for building modern and responsive web applications. With a strong background in both front-end and back-end development, I aim to create websites that are efficient, visually appealing, and user-friendly.
-                </p>
-                    <div class="tags">
-                    <span id="age"></span><span> Web Development |</span><span> Back-End Developer |</span><span> Tech Enthusiast |</span>
-                </div>
-            </section>
-
-            <!-- Skills Section -->
-            <section id="skills">
-                <h2>My Daily Tech Stack</h2>
-                <div class="skills-grid">
-                    <i class="fab fa-html5"></i>
-                    <i class="fab fa-css3-alt"></i>
-                    <i class="fab fa-js-square"></i>
-                    <i class="fab fa-react"></i>
-                    <i class="fab fa-python"></i>
-                    <i class="fab fa-laravel"></i>
-                </div>
-                <h3>Creating Seamless User Experiences, One Line of Code at a Time.</h3>
-            </section>
-
-            <!-- Projects Section -->
-            <section id="projects">
-                <h2>My Works</h2>
-                <div class="projects-grid">
-                    <div class="project-item fade-in">
-                        <h3>Point of Sale Back Office Web App</h3>
-                        <p>
-                            A comprehensive web application for managing sales, inventory, and customer data, designed to streamline retail operations efficiently.
-                        </p>
-                        <div class="computer-frame" tabindex="0" aria-label="Point of Sale Back Office Web App Screenshot">
-                            <img src="images/pos_back_office_web_app.png" alt="Point of Sale Back Office Web App Screenshot" class="clickable-image" />
-                        </div>
-                        <div class="button">
-                            <a href="http://34.81.55.55:5000" target="_blank" rel="noopener" aria-label="View Point of Sale Back Office Web App Project">
-                                View Project
-                                <span class="shift">›</span>
-                            </a>
-                            <div class="mask"></div>
-                        </div>
-                    </div>
-                    <div class="project-item fade-in">
-                        <h3>Point of Sale Mobile App</h3>
-                        <p>
-                            A mobile application offering the same robust sales and inventory management features as the web app, optimized for on-the-go retail management.
-                        </p>
-                        <div class="tablet-frame" tabindex="0" aria-label="Point of Sale Mobile App Screenshot">
-                            <img src="images/flutter_pos_app.png" alt="Point of Sale Mobile App Screenshot" class="clickable-image" />
-                        </div>
-                        <div class="button">
-                            <a href="#" target="_blank" rel="noopener" aria-label="View Point of Sale Mobile App Project">
-                                View Project
-                                <span class="shift">›</span>
-                            </a>
-                            <div class="mask"></div>
-                        </div>
-                    </div>
-                    <div class="project-item fade-in">
-                        <h3>Motoshop Web App</h3>
-                        <p>
-                            A web application for managing motorcycle sales and inventory.
-                        </p>
-                        <div class="computer-frame" tabindex="0" aria-label="Motoshop Web App Screenshot">
-                            <img src="images/motoshop_web_app.png" alt="Motoshop Web App Screenshot" class="clickable-image" />
-                        </div>
-                        <div class="button">
-                            <a href="https://davesmotoshop.unaux.com" target="_blank" rel="noopener" aria-label="View Motoshop Web App Project">
-                                View Project
-                                <span class="shift">›</span>
-                            </a>
-                            <div class="mask"></div>
-                        </div>
-                    </div>
-                </div>
-                <button class="explore-btn">
-                    Explore more <i class="fas fa-arrow-right"></i>
-                </button>
-            </section>
-
-            <!-- Image Modal -->
-            <div id="imageModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
-                <span class="modal-close" role="button" aria-label="Close Image Modal">&times;</span>
-                <img class="modal-content" id="modalImage" alt="Expanded project screenshot" />
-                <div id="caption"></div>
+            <div class="project-item fade-in">
+              <h3>Motoshop Web App</h3>
+              <p>
+                A web application for managing motorcycle sales and inventory.
+              </p>
+              <div
+                class="computer-frame"
+                tabindex="0"
+                aria-label="Motoshop Web App Screenshot"
+              >
+                <img
+                  src="images/motoshop_web_app.png"
+                  alt="Motoshop Web App Screenshot"
+                  class="clickable-image"
+                />
+              </div>
+              <div class="button">
+                <a
+                  href="https://davesmotoshop.unaux.com"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="View Motoshop Web App Project"
+                >
+                  View Project
+                  <span class="shift">›</span>
+                </a>
+                <div class="mask"></div>
+              </div>
             </div>
-        </main>
+          </div>
+          <button class="explore-btn">
+            Explore more <i class="fas fa-arrow-right"></i>
+          </button>
+        </section>
+
+        <!-- Image Modal -->
+        <div
+          id="imageModal"
+          class="modal"
+          aria-hidden="true"
+          role="dialog"
+          aria-modal="true"
+        >
+          <span class="modal-close" role="button" aria-label="Close Image Modal"
+            >&times;</span
+          >
+          <img
+            class="modal-content"
+            id="modalImage"
+            alt="Expanded project screenshot"
+          />
+          <div id="caption"></div>
+        </div>
+      </main>
     </div>
 
     <script src="scripts/script.js"></script>
     <script src="scripts/meteor.js"></script>
     <script src="scripts/layout-fix.js"></script>
-</body>
+  </body>
 </html>
