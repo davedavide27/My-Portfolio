@@ -687,6 +687,79 @@ body.light-mode .projects-grid {
         overflow: visible; /* Remove separate scroll */
     }
 
+    /* Landscape orientation adjustments for mobile */
+    @media (orientation: landscape) and (max-width: 768px) {
+        .container {
+            flex-direction: row;
+            height: 100vh;
+            padding: 10px 20px;
+        }
+
+        .sidebar {
+            width: 30%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            margin-bottom: 0;
+            overflow-y: auto;
+        }
+
+        .content {
+            width: 65%;
+            margin-left: 35%;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+        }
+
+        .sidebar h1 {
+            font-size: 1.2rem;
+        }
+
+        .sidebar h2 {
+            font-size: 1rem;
+        }
+
+        .sidebar p {
+            font-size: 0.8rem;
+        }
+
+        .skills-grid i {
+            font-size: 30px;
+        }
+
+        .project-item {
+            width: calc(50% - 10px);
+        }
+
+        .computer-frame, .tablet-frame {
+            max-width: 300px;
+            height: 180px;
+        }
+
+        .dark-mode-buttons {
+            position: relative !important;
+            top: 0 !important;
+            right: 0 !important;
+            margin: 0 0 10px 0 !important;
+            padding: 10px 0 !important;
+        }
+
+        .talk-btn {
+            width: 80px;
+            height: 30px;
+        }
+
+        .talk-btn span:first-child {
+            font-size: 12px;
+        }
+    }
+
 /* New rounded button effect based on Effect #1 */
 .btn-hover-effect-rounded {
   position: relative;
@@ -1251,7 +1324,8 @@ body.dark-mode .button:hover .mask {
 
   .talk-btn {
     width: 90px;
-    height: 35px;
+    height: 15px;
+    padding: 0.3rem 0.8rem;
   }
 
   .talk-btn span:first-child {
@@ -1357,7 +1431,7 @@ body.dark-mode .button:hover .mask {
 
   .talk-btn {
     width: 80px;
-    height: 30px;
+    height: 25px;
   }
 
   .talk-btn span:first-child {
