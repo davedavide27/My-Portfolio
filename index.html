@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/modal-style.css" />
     <link rel="stylesheet" href="css/meteor.css" />
+    <link rel="stylesheet" href="css/gallery.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -185,21 +186,16 @@
                 aria-label="Point of Sale Back Office Web App Screenshot"
               >
                 <img
-                  src="images/pos_back_office_web_app.png"
+                  src="images/pos_backoffice/pos_back_office_web_app.png"
                   alt="Point of Sale Back Office Web App Screenshot"
                   class="clickable-image"
                 />
               </div>
               <div class="button">
-                <a
-                  href="http://34.81.55.55:5000"
-                  target="_blank"
-                  rel="noopener"
-                  aria-label="View Point of Sale Back Office Web App Project"
-                >
+                <button class="view-project-btn" data-folder="pos_backoffice" aria-label="View Point of Sale Back Office Web App Project">
                   View Project
                   <span class="shift">›</span>
-                </a>
+                </button>
                 <div class="mask"></div>
               </div>
             </div>
@@ -216,21 +212,16 @@
                 aria-label="Point of Sale Mobile App Screenshot"
               >
                 <img
-                  src="images/flutter_pos_app.png"
+                  src="images/pos_mobile/image.png"
                   alt="Point of Sale Mobile App Screenshot"
                   class="clickable-image"
                 />
               </div>
               <div class="button">
-                <a
-                  href="#"
-                  target="_blank"
-                  rel="noopener"
-                  aria-label="View Point of Sale Mobile App Project"
-                >
+                <button class="view-project-btn" data-folder="pos_mobile" aria-label="View Point of Sale Mobile App Project">
                   View Project
                   <span class="shift">›</span>
-                </a>
+                </button>
                 <div class="mask"></div>
               </div>
             </div>
@@ -245,21 +236,16 @@
                 aria-label="Motoshop Web App Screenshot"
               >
                 <img
-                  src="images/motoshop_web_app.png"
+                  src="images/motoshop/motoshop_web_app.png"
                   alt="Motoshop Web App Screenshot"
                   class="clickable-image"
                 />
               </div>
               <div class="button">
-                <a
-                  href="https://davesmotoshop.unaux.com"
-                  target="_blank"
-                  rel="noopener"
-                  aria-label="View Motoshop Web App Project"
-                >
+                <button class="view-project-btn" data-folder="motoshop" aria-label="View Motoshop Web App Project">
                   View Project
                   <span class="shift">›</span>
-                </a>
+                </button>
                 <div class="mask"></div>
               </div>
             </div>
@@ -287,10 +273,21 @@
           />
           <div id="caption"></div>
         </div>
+
+        <!-- Gallery Modal -->
+        <div id="galleryModal" class="gallery-modal" aria-hidden="true" role="dialog" aria-modal="true">
+          <span class="gallery-close" role="button" aria-label="Close Gallery">&times;</span>
+          <div class="gallery-content">
+            <div class="gallery-scroll"></div>
+            <button class="gallery-nav gallery-prev" aria-label="Previous image"><</button>
+            <button class="gallery-nav gallery-next" aria-label="Next image">></button>
+          </div>
+        </div>
       </main>
     </div>
 
     <script src="scripts/script.js"></script>
+    <script src="scripts/gallery.js"></script>
     <script src="scripts/meteor.js"></script>
     <script src="scripts/layout-fix.js"></script>
   </body>

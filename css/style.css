@@ -951,20 +951,26 @@ body.light-mode .button:hover {
   border-color: black;
 }
 
-.button a {
+.button .view-project-btn {
   color: var(--color-button);
   font-family: var(--font-button);
   position: relative;
   text-decoration: none;
   white-space: nowrap;
   z-index: 2;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  padding: 0;
+  width: 100%;
 }
 
-body.light-mode .button a {
+body.light-mode .button .view-project-btn {
   color: black;
 }
 
-body.light-mode .button:hover a {
+body.light-mode .button:hover .view-project-btn {
   color: black;
 }
 
@@ -1036,7 +1042,7 @@ body.dark-mode .button {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-body.dark-mode .button a {
+body.dark-mode .button .view-project-btn {
   color: rgba(255, 255, 255, 0.6);
 }
 
@@ -1046,7 +1052,7 @@ body.dark-mode .button:hover {
   box-shadow: 0 0 0.3125rem rgba(255, 255, 255, 0.8);
 }
 
-body.dark-mode .button:hover a {
+body.dark-mode .button:hover .view-project-btn {
   color: rgba(255, 255, 255, 1.0);
 }
 
