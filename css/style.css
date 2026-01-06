@@ -1323,9 +1323,10 @@ body.dark-mode .button:hover .mask {
   }
 
   .talk-btn {
-    width: 90px;
+    width: 103px;
     height: 15px;
-    padding: 0.3rem 0.8rem;
+    padding: 0.5rem 1rem;
+    text-align: center;
   }
 
   .talk-btn span:first-child {
