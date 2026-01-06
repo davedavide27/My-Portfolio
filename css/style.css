@@ -935,12 +935,13 @@ body.light-mode.hover {
   position: relative;
   text-align: center;
   text-transform: uppercase;
-  transition: 
+  transition:
     background-color 0.3s var(--transition-easing),
     border 1s var(--transition-easing),
     color 0.6s var(--transition-easing);
+  -webkit-user-select: none;
   user-select: none;
-  font-size: 0.85rem;
+  font-size: 1rem;
 }
 
 body.light-mode .button {
@@ -1062,4 +1063,362 @@ body.dark-mode .button .mask {
 
 body.dark-mode .button:hover .mask {
   background-color: rgba(255, 255, 255, 1.0);
+}
+
+/* Responsive Design for All Screen Sizes */
+
+/* Extra Large Screens (Desktops > 1400px) */
+@media (min-width: 1401px) {
+  .container {
+    padding: 40px 60px 0;
+  }
+
+  .sidebar {
+    width: 22%;
+  }
+
+  .content {
+    width: 75%;
+    margin-left: 27%;
+    padding: 40px;
+  }
+
+  .skills-grid i {
+    font-size: 50px;
+  }
+
+  .project-item {
+    width: calc(50% - 10px);
+  }
+
+  .computer-frame, .tablet-frame {
+    max-width: 450px;
+    height: 280px;
+  }
+}
+
+/* Large Screens (Desktops 1200px - 1400px) */
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .sidebar {
+    width: 25%;
+  }
+
+  .content {
+    width: 70%;
+    margin-left: 30%;
+  }
+
+  .skills-grid i {
+    font-size: 45px;
+  }
+
+  .project-item {
+    width: calc(50% - 10px);
+  }
+}
+
+/* Medium Screens (Tablets 768px - 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .container {
+    padding: 20px 30px 0;
+  }
+
+  .sidebar {
+    width: 30%;
+    padding: 20px 15px;
+  }
+
+  .content {
+    width: 65%;
+    margin-left: 35%;
+    padding: 25px;
+  }
+
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+
+  .sidebar h1 {
+    font-size: 1.5rem;
+  }
+
+  .sidebar h2 {
+    font-size: 1.2rem;
+  }
+
+  .sidebar p {
+    font-size: 0.9rem;
+  }
+
+  .skills-grid i {
+    font-size: 35px;
+  }
+
+  .project-item {
+    width: calc(50% - 10px);
+  }
+
+  .computer-frame, .tablet-frame {
+    max-width: 350px;
+    height: 220px;
+  }
+
+  .dark-mode-buttons {
+    position: relative !important;
+    top: 0 !important;
+    right: 0 !important;
+    margin: 0 0 15px 0 !important;
+    width: auto !important;
+    padding: 10px 0 !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    gap: 10px !important;
+  }
+}
+
+/* Small Screens (Large Phones 481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .container {
+    flex-direction: column;
+    padding: 15px 20px 0;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 20px 15px;
+    margin-bottom: 20px;
+  }
+
+  .content {
+    width: 100%;
+    margin-left: 0;
+    padding: 20px 15px;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+
+  .sidebar h1 {
+    font-size: 1.3rem;
+  }
+
+  .sidebar h2 {
+    font-size: 1.1rem;
+  }
+
+  .sidebar p {
+    font-size: 0.85rem;
+  }
+
+  .social-icons a {
+    font-size: 20px;
+  }
+
+  .skills-grid i {
+    font-size: 30px;
+  }
+
+  .projects-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .project-item {
+    width: 100%;
+  }
+
+  .computer-frame, .tablet-frame {
+    max-width: 100%;
+    height: 200px;
+  }
+
+  .dark-mode-buttons {
+    position: relative !important;
+    top: 0 !important;
+    right: 0 !important;
+    margin: 0 0 15px 0 !important;
+    width: auto !important;
+    padding: 10px 0 !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    gap: 10px !important;
+  }
+
+  .talk-btn {
+    width: 90px;
+    height: 35px;
+  }
+
+  .talk-btn span:first-child {
+    font-size: 12px;
+  }
+}
+
+/* Extra Small Screens (Small Phones < 480px) */
+@media (max-width: 480px) {
+  .container {
+    flex-direction: column;
+    padding: 10px 15px 0;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 15px 10px;
+    margin-bottom: 15px;
+  }
+
+  .content {
+    width: 100%;
+    margin-left: 0;
+    padding: 15px 10px;
+  }
+
+  .profile-pic {
+    width: 80px;
+    height: 80px;
+  }
+
+  .sidebar h1 {
+    font-size: 1.1rem;
+  }
+
+  .sidebar h2 {
+    font-size: 1rem;
+  }
+
+  .sidebar p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .social-icons {
+    gap: 8px;
+  }
+
+  .social-icons a {
+    font-size: 18px;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    justify-items: center;
+  }
+
+  .skills-grid i {
+    font-size: 25px;
+  }
+
+  .projects-grid {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .project-item {
+    width: 100%;
+    padding: 15px;
+    min-height: 400px;
+  }
+
+  .computer-frame, .tablet-frame {
+    max-width: 100%;
+    height: 180px;
+  }
+
+  .project-item p {
+    font-size: 0.9rem;
+    min-height: 50px;
+  }
+
+  .dark-mode-buttons {
+    position: relative !important;
+    top: 0 !important;
+    right: 0 !important;
+    margin: 0 0 10px 0 !important;
+    width: auto !important;
+    padding: 8px 0 !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    gap: 8px !important;
+  }
+
+  .light-mode-btn, .dark-mode-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .talk-btn {
+    width: 80px;
+    height: 30px;
+  }
+
+  .talk-btn span:first-child {
+    font-size: 11px;
+  }
+
+  .explore-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Gallery Modal Responsiveness */
+@media (max-width: 768px) {
+  .gallery-modal {
+    padding: 10px;
+  }
+
+  .gallery-content {
+    width: 95%;
+    max-width: none;
+  }
+
+  .gallery-scroll {
+    height: 60vh;
+  }
+
+  .gallery-item img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .gallery-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-modal {
+    padding: 5px;
+  }
+
+  .gallery-content {
+    width: 98%;
+  }
+
+  .gallery-scroll {
+    height: 50vh;
+  }
+
+  .gallery-nav {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  .gallery-close {
+    font-size: 24px;
+    top: 10px;
+    right: 15px;
+  }
 }

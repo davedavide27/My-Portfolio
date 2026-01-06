@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (talkBtn) {
     talkBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      window.location.href = 'mailto:dave.davide@example.com';
+      window.location.href = 'mailto:dave.davide.workmail@gmail.com';
     });
   }
 

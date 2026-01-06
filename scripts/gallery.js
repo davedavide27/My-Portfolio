@@ -12,31 +12,31 @@ document.addEventListener('DOMContentLoaded', () => {
         'pos_backoffice': [
             {
                 src: 'images/pos_backoffice/pos_back_office_web_app.png',
-                description: 'Point of Sale Back Office Web Application - Login Page.'
+                description: 'Point of Sale Back Office Web Application - Login Page'
             }
         ],
         'pos_mobile': [
             {
                 src: 'images/pos_mobile/image.png',
-                description: 'Point of Sale Mobile Application - Main interface showing product catalog and shopping cart functionality.'
+                description: 'Point of Sale Mobile Application - Login Page.'
             },
             {
                 src: 'images/pos_mobile/items.png',
-                description: 'Point of Sale Mobile Application - Item management screen for adding products and managing inventory.'
+                description: 'Point of Sale Mobile Application - Item Management'
             }
         ],
         'motoshop': [
             {
                 src: 'images/motoshop/motoshop_web_app.png',
-                description: 'Motoshop Web Application - Main interface for motorcycle sales and service management.'
+                description: 'Motoshop Web Application - Login Page.'
             },
             {
                 src: 'images/motoshop/dashboard.png',
-                description: 'Motoshop Dashboard - Comprehensive analytics view showing sales performance and inventory levels.'
+                description: 'Motoshop Web Application - Dashboard Page.'
             },
             {
                 src: 'images/motoshop/dashboard2.png',
-                description: 'Motoshop Admin Panel - Administrative interface for managing users, products, and system settings.'
+                description: 'Motoshop Web Application - Dashboard Page.'
             }
         ]
     };
@@ -53,6 +53,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Clear existing content
                 galleryScroll.innerHTML = '';
+
+                // Create mechanical border elements
+                const topBorder = document.createElement('div');
+                topBorder.className = 'mechanical-border top';
+                galleryScroll.appendChild(topBorder);
+
+                const bottomBorder = document.createElement('div');
+                bottomBorder.className = 'mechanical-border bottom';
+                galleryScroll.appendChild(bottomBorder);
+
+                const leftBorder = document.createElement('div');
+                leftBorder.className = 'mechanical-border left';
+                galleryScroll.appendChild(leftBorder);
+
+                const rightBorder = document.createElement('div');
+                rightBorder.className = 'mechanical-border right';
+                galleryScroll.appendChild(rightBorder);
+
+                // Create corner bolts
+                const topLeftBolt = document.createElement('div');
+                topLeftBolt.className = 'corner-bolt top-left';
+                galleryScroll.appendChild(topLeftBolt);
+
+                const topRightBolt = document.createElement('div');
+                topRightBolt.className = 'corner-bolt top-right';
+                galleryScroll.appendChild(topRightBolt);
+
+                const bottomLeftBolt = document.createElement('div');
+                bottomLeftBolt.className = 'corner-bolt bottom-left';
+                galleryScroll.appendChild(bottomLeftBolt);
+
+                const bottomRightBolt = document.createElement('div');
+                bottomRightBolt.className = 'corner-bolt bottom-right';
+                galleryScroll.appendChild(bottomRightBolt);
+
+
 
                 // Create description
                 const description = document.createElement('p');
@@ -160,6 +196,14 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 thumb.classList.remove('active');
             }
+        });
+
+        // Trigger corner bolt pulse animation
+        const cornerBolts = galleryScroll.querySelectorAll('.corner-bolt');
+        cornerBolts.forEach(bolt => {
+            bolt.style.animation = 'none';
+            bolt.offsetHeight; // Trigger reflow
+            bolt.style.animation = 'cornerBoltPulse 0.6s ease-in-out';
         });
     }
 
